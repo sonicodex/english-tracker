@@ -340,6 +340,8 @@ async function openDetail(taskId, { keepScroll = false } = {}) {
   const notes = [
     detail.source_note ? `<div class="note note--source"><span class="note__k sin-label-md">Ficha en la guía</span><span class="sin-body-sm">${esc(detail.source_note)}</span></div>` : '',
     detail.production_note ? `<div class="note note--production"><span class="note__k sin-label-md">Respuesta de producción</span><span class="sin-body-sm">${esc(detail.production_note)}</span></div>` : '',
+    detail.steps ? `<div class="note note--steps"><span class="note__k sin-label-md">Pasos sugeridos</span><span class="sin-body-sm">${esc(detail.steps)}</span></div>` : '',
+    detail.expected_result ? `<div class="note note--result"><span class="note__k sin-label-md">Resultado esperado</span><span class="sin-body-sm">${esc(detail.expected_result)}</span></div>` : '',
   ]
     .filter(Boolean)
     .join('');
@@ -487,6 +489,8 @@ function taskForm(task = {}, defaultBatch = null) {
     ${field('minutes', 'Duración (min)', { value: task.minutes ?? '', type: 'number' })}
     ${field('source_note', 'Ficha en la guía', { value: task.source_note || '', textarea: true, span: true })}
     ${field('production_note', 'Respuesta de producción', { value: task.production_note || '', textarea: true, span: true })}
+    ${field('steps', 'Pasos sugeridos', { value: task.steps || '', textarea: true, span: true })}
+    ${field('expected_result', 'Resultado esperado', { value: task.expected_result || '', textarea: true, span: true })}
   </div>`;
 }
 
@@ -614,9 +618,11 @@ const COLUMN_ALIASES = {
   prioridad: 'priority', priority: 'priority',
   ficha: 'source_note', source_note: 'source_note', nota: 'source_note', hallazgo: 'source_note',
   respuesta: 'production_note', production_note: 'production_note', comentario: 'production_note', 'decisión': 'production_note', decision: 'production_note',
+  pasos: 'steps', steps: 'steps',
+  resultado: 'expected_result', expected_result: 'expected_result',
 };
 
-const EXPORT_COLUMNS = ['tanda', 'tarea', 'tipo', 'clases', 'esfuerzo', 'profe', 'minutos', 'prioridad', 'ficha', 'respuesta'];
+const EXPORT_COLUMNS = ['tanda', 'tarea', 'tipo', 'clases', 'esfuerzo', 'profe', 'minutos', 'prioridad', 'ficha', 'respuesta', 'pasos', 'resultado'];
 
 function detectDelimiter(text) {
   const line = text.split(/\r?\n/).find((l) => l.trim()) || '';
@@ -767,6 +773,8 @@ function exportCsv() {
           t.priority,
           t.source_note,
           t.production_note,
+          t.steps,
+          t.expected_result,
           ...phases.map((p) => (t.phases[p.id]?.done ? 'x' : '')),
           t.comments_total,
         ]

@@ -20,8 +20,10 @@
           "owner": "Ravee Lakhmani",
           "minutes": 7,
           "priority": "MEDIA",
-          "source_note": "Formato: audio que señala una pantalla inexistente.",
-          "production_note": "Grabación: De acuerdo, se necesita crear los guiones y pedir al profesor hacer la grabación."
+          "source_note": "Formato: audio que señala una pantalla inexistente — Reeditar los segmentos 'have a look at the screen' con descripciones verbales autosuficientes de las posiciones (o insertar audio-descripción), para que el andamiaje de lugar funcione en modo podcast",
+          "production_note": "Grabación: De acuerdo, se necesita crear los guiones y pedir al profesor hacer la grabación.",
+          "steps": "1) Localizar en las clases 1, 7, 8 y 9 los segmentos que dicen 'have a look at the screen' (≈6-8 min en total). 2) Regrabar SOLO el audio: la profesora describe las posiciones con palabras ('the cat is ON the box — on top of it'), sin referencia visual. 3) Sustituir el audio en esos rangos y verificar que cada ejercicio funcione sin pantalla.",
+          "expected_result": "Entender posiciones y lugares descritos SOLO con palabras, como corresponde al formato audio — L4/PS1"
         },
         {
           "id": "t1-02",
@@ -32,8 +34,10 @@
           "owner": "Carolina Boquín",
           "minutes": 1,
           "priority": "MEDIA",
-          "source_note": "Referencias rotas (clases VR retiradas).",
-          "production_note": "Reedición: Puedo hacer los cortes de audio y pedir a edición que rehagan el rénder del apoyo visual."
+          "source_note": "Referencias rotas (clases VR retiradas) — Recortar las menciones a las 3 clases VR inactivas (cls 2 [01:13-01:40], cls 10 [04:52]) o reactivar/regrabar ese bonus; hoy es promesa rota evaluada en examen",
+          "production_note": "Reedición: Puedo hacer los cortes de audio y pedir a edición que rehagan el rénder del apoyo visual.",
+          "steps": "1) Cortar clase 2 [01:13–01:40] y la mención de clase 10 en [04:52]. 2) Re-render y verificar continuidad de audio. (Alternativa solo si se decide: reactivar las 3 clases VR.)",
+          "expected_result": "Seguir el curso sin referencias rotas"
         },
         {
           "id": "t1-03",
@@ -44,8 +48,10 @@
           "owner": "Mariana Lafon",
           "minutes": 0.5,
           "priority": "MEDIA",
-          "source_note": "Modelo incorrecto dictado ('catched', 'payed').",
-          "production_note": "Reedición: ¿cómo haríamos esto? Quizás podríamos ver con edición si entrenando un modelo rápido con la voz de la profe, pudiéramos corregir estas palabras mal pronunciadas, ya que probablemente contactarla para regrabar este pequeño segmento no sea tan óptimo."
+          "source_note": "Modelo incorrecto dictado ('catched', 'payed') — Reeditar el segmento final del ejercicio ([07:37]-[07:53]) que dicta las formas incorrectas 'catched' y 'payed' como palabras a practicar (deberían ser caught/paid o sustituirse por regulares)",
+          "production_note": "Reedición: ¿cómo haríamos esto? Quizás podríamos ver con edición si entrenando un modelo rápido con la voz de la profe, pudiéramos corregir estas palabras mal pronunciadas, ya que probablemente contactarla para regrabar este pequeño segmento no sea tan óptimo.",
+          "steps": "1) Cortar [07:37–07:53] de la clase 18, o regrabar ~20s con las formas correctas caught/paid (o sustituir por verbos regulares). 2) Verificar que el worksheet no liste 'catched/payed'.",
+          "expected_result": "Practicar pronunciación sin aprender formas erróneas"
         }
       ]
     },
@@ -62,8 +68,10 @@
           "owner": "por asignar",
           "minutes": 21,
           "priority": "ALTA",
-          "source_note": "Modo sin práctica medible (interacción oral y teléfono).",
-          "production_note": "Nuevo: De acuerdo."
+          "source_note": "Modo sin práctica medible (interacción oral y teléfono) — 'Práctica y Checkpoint de Salida A1': ~6-8 clases — sesiones guiadas de simulador (escenarios rescatados de 2175/2395), tarea telefónica (material de 3996), checkpoint contra el banco. Requiere A07/A08 resueltos",
+          "production_note": "Nuevo: De acuerdo.",
+          "steps": "1) Guion contra IS1/IS3/IS6 con la estructura tentativa: 1-2 sesiones guiadas de simulador (presentación personal, compras — escenarios ya escritos en 2175/2395), 1 clase de teléfono + tarea telefónica (las 2 llamadas modeladas de Inglés para el Trabajo sirven de base), 1 simulacro, checkpoint contra el banco. 2) Validación del guion contra la pestaña 1 del workbook. 3) NO producir antes de que los simuladores estén renivelados y midiendo (sección C).",
+          "expected_result": "Sostener la conversación guiada del simulador, cumplir una tarea telefónica y pasar el checkpoint de salida A1 — IS1, IS3, IS6"
         },
         {
           "id": "t2-02",
@@ -74,8 +82,10 @@
           "owner": "Fernanda Machado",
           "minutes": 10.5,
           "priority": "ALTA",
-          "source_note": "Can-dos sin fuente (escritura transaccional).",
-          "production_note": "Nuevo: No comprendo bien el objetivo aquí."
+          "source_note": "Can-dos sin fuente (escritura transaccional) — Formulario de registro · formulario de compra en línea · tarjeta/postal — dentro de 2256 tras su renivelación A2",
+          "production_note": "Nuevo: No comprendo bien el objetivo aquí.",
+          "steps": "1) Guion de 3 clases: (a) llenar formulario de registro — nombre, nacionalidad, dirección, fecha de nacimiento; (b) compra en línea — datos + dirección de envío + confirmación; (c) tarjeta/postal — saludo, 2-3 frases, despedida. 2) Cada clase termina con el challenge correspondiente YA creado en banco (sección B, curso Escritura). 3) Grabar tras la renivelación A2→A1 del curso (fila 10).",
+          "expected_result": "Llenar un formulario de registro, completar una compra en línea y escribir una tarjeta/postal simple — PW3, IW3, PW4"
         },
         {
           "id": "t2-03",
@@ -86,8 +96,10 @@
           "owner": "René Lora",
           "minutes": 4.5,
           "priority": "MEDIA",
-          "source_note": "Can-dos sin fuente (mediación es↔en).",
-          "production_note": "Nuevo: No entiendo muy bien cómo iría esto de \"Transmítelo en español\"."
+          "source_note": "Can-dos sin fuente (mediación es↔en) — Añadir la capa 'transmítelo en español' sobre los letreros/menús/cuentas que 2921 ya muestra en pantalla",
+          "production_note": "Nuevo: No entiendo muy bien cómo iría esto de \"Transmítelo en español\".",
+          "steps": "1) Guion de 2-3 segmentos sobre las clases existentes de letreros/menús/cuenta: la profesora muestra el material ya filmado y pide 'tu amigo no habla inglés — ¿qué le dices?'. 2) Cerrar cada segmento con el ítem de mediación correspondiente (sección B, curso Vocabulario, clase 13).",
+          "expected_result": "Contarle en español a alguien lo que dice un letrero/aviso y listar nombres/precios entre idiomas — M2, M3, M1"
         },
         {
           "id": "t2-04",
@@ -98,8 +110,10 @@
           "owner": "René Lora",
           "minutes": 15,
           "priority": "MEDIA",
-          "source_note": "Nivel equivocado (A2 como objetivo).",
-          "production_note": "Reedición: Concuerdo en que el presente contínuo debería reubicarse, ¿regrabaríamos las partes que están en este tiempo por expresiones en presente simple?"
+          "source_note": "Nivel equivocado (A2 como objetivo) — Reencuadrar present continuous (14) y past simple (17) como exposición receptiva o mover a A2; decisión de matriz a nivel ruta, no urgente por sí sola",
+          "production_note": "Reedición: Concuerdo en que el presente contínuo debería reubicarse, ¿regrabaríamos las partes que están en este tiempo por expresiones en presente simple?",
+          "steps": "Para cada segmento: si el estudiante debe PRODUCIR la estructura, regrabar el segmento con tarea A1; si solo la escucha, dejarla con rótulo de exposición ('así suena el pasado — lo aprenderás en A2'). Clase 14: segmento present continuous. Clase 17: past simple es el objetivo de la clase completa — decisión de matriz (receptivo vs mover a A2) antes de tocar.",
+          "expected_result": "Recibir ropa/anécdotas solo como INPUT receptivo, sin que el nivel A1 se rompa (o el contenido migra a A2)"
         },
         {
           "id": "t2-05",
@@ -110,8 +124,10 @@
           "owner": "Fernanda Machado",
           "minutes": 8,
           "priority": "MEDIA",
-          "source_note": "Nivel equivocado (tareas A2 como objetivo).",
-          "production_note": "Grabación: De acuerdo, se necesita crear los guiones y pedir al profesor hacer la grabación."
+          "source_note": "Nivel equivocado (tareas A2 como objetivo) — Reencuadrar ambas clases a tareas A1 (rutina simple en presente; descripción de una persona en vez de biografía en pasado). Va junto con la renivelación general A2",
+          "production_note": "Grabación: De acuerdo, se necesita crear los guiones y pedir al profesor hacer la grabación.",
+          "steps": "1) Clase 17: regrabar el segmento de tarea para pedir rutina simple en presente (sin adverbios de frecuencia como objetivo). 2) Clase 18: cambiar la tarea de 'biografía en pasado' a 'describe a una persona' (presente). 3) Aplicar la pauta general de renivelación del curso al revisar los guiones de las 3 clases nuevas (A142).",
+          "expected_result": null
         },
         {
           "id": "t2-06",
@@ -122,8 +138,10 @@
           "owner": "Jhon Carvajal",
           "minutes": 0.3,
           "priority": "BAJA",
-          "source_note": "Tarea desalineada con lo enseñado.",
-          "production_note": "Reedición: De acuerdo. Podemos grabar con voz en off y pedir a edición apoyar con motion graphics."
+          "source_note": "Tarea desalineada con lo enseñado — Reeditar el cierre (últimos ~20s) para que la tarea pida escribir presentaciones con 'this is' + saludo, no descripciones genéricas",
+          "production_note": "Reedición: De acuerdo. Podemos grabar con voz en off y pedir a edición apoyar con motion graphics.",
+          "steps": "Regrabar o reeditar los últimos ~20s de la clase 10: la tarea dice 'descripciones'; debe decir 'presenta a dos personas con This is… + saludo'.",
+          "expected_result": "Presentar a alguien por escrito con 'This is…' + saludo — IS2/PS1"
         },
         {
           "id": "t2-07",
@@ -134,8 +152,10 @@
           "owner": "Fernanda Machado",
           "minutes": 2.5,
           "priority": "BAJA",
-          "source_note": "Metalenguaje fuera de nivel.",
-          "production_note": "Reedición: Puedo hacer estos cortes y resubir la clase."
+          "source_note": "Metalenguaje fuera de nivel — Recortar el segmento acrónimo/inicialismo y punto británico vs americano (≈2.5 min de metalenguaje fuera de A1) de la clase más larga del curso",
+          "production_note": "Reedición: Puedo hacer estos cortes y resubir la clase.",
+          "steps": "Cortar el segmento de acrónimo vs inicialismo y puntuación británica/americana (≈2.5 min, en la primera mitad de la clase 2). El contenido restante queda al nivel.",
+          "expected_result": "Escribir oraciones simples sin desvío metalingüístico — PW1"
         },
         {
           "id": "t2-08",
@@ -146,8 +166,10 @@
           "owner": "Gina Pedraza",
           "minutes": 2,
           "priority": "BAJA",
-          "source_note": "Material de examen invisible para el estudiante.",
-          "production_note": "Reedición: De acuerdo. Podemos grabar con voz en off y pedir a edición apoyar con motion graphics."
+          "source_note": "Material de examen invisible para el estudiante — Añadir al video los perfiles de los dos candidatos (hoy solo en worksheet) para que los ítems de examen tengan base en el video; duración actual anómala (1m14s)",
+          "production_note": "Reedición: De acuerdo. Podemos grabar con voz en off y pedir a edición apoyar con motion graphics.",
+          "steps": "Añadir al cierre de la clase 13 una pantalla (~2 min de motion/gráfico) con los DOS perfiles de candidatos que hoy solo existen en el worksheet, para que los ítems del examen tengan referente visible. Texto de los perfiles: en el worksheet de la clase.",
+          "expected_result": "Leer los dos perfiles en pantalla y decidir con esa información — R5"
         }
       ]
     },
@@ -164,8 +186,10 @@
           "owner": "por asignar",
           "minutes": 38.5,
           "priority": "MEDIA",
-          "source_note": "Refuerzo opcional (audiencia de viajes).",
-          "production_note": "Nuevo: De acuerdo."
+          "source_note": "Refuerzo opcional (audiencia de viajes) — En video (no audio), simuladores re-escritos a A1; desvío clásico de viajes",
+          "production_note": "Nuevo: De acuerdo.",
+          "steps": "Alcance por definir tras la decisión de ruta mínima. Insumos listos: escenarios de simulador de 2175 (check-in, small talk) re-escritos a A1 y estructura de can-dos IS4/IS5/R2/L4/L5. No agendar.",
+          "expected_result": "Resolver aeropuerto, hotel, compras y direcciones en un viaje real — IS4, IS5, R2, L4, L5, M1/M2"
         },
         {
           "id": "t3-02",
@@ -176,8 +200,10 @@
           "owner": "por asignar (base: Gina Pedraza)",
           "minutes": 31.5,
           "priority": "MEDIA",
-          "source_note": "Refuerzo opcional (audiencia laboral).",
-          "production_note": "Nuevo: De acuerdo."
+          "source_note": "Refuerzo opcional (audiencia laboral) — Sector English profesional; vehículo natural de IS6 ampliado; entrevista marcada como puente A1+/A2",
+          "production_note": "Nuevo: De acuerdo.",
+          "steps": "Alcance por definir tras la decisión de ruta mínima. Base: 3996 (Gina Pedraza); rescatar las 2 llamadas telefónicas modeladas; entrevista marcada A1+/A2. No agendar.",
+          "expected_result": "Presentarse, seguir instrucciones y atender una llamada simple en contexto laboral — PS2, L4, IS6, R5, PW2"
         },
         {
           "id": "t3-03",
@@ -188,8 +214,10 @@
           "owner": "por asignar",
           "minutes": 15,
           "priority": "BAJA",
-          "source_note": "Preparación de examen (audiencia B2B).",
-          "production_note": "Nuevo: De acuerdo y lo pondría prioritario."
+          "source_note": "Preparación de examen (audiencia B2B) — Qué esperar del examen, práctica por modo contra el banco, simulacro completo; da meta visible (punto de Ofelia). La más especulativa: depende del contrato",
+          "production_note": "Nuevo: De acuerdo y lo pondría prioritario.",
+          "steps": "Condicionada al contrato B2B (Diana). Estructura tentativa: qué esperar del examen · práctica por modo contra el banco · simulacro completo. No agendar.",
+          "expected_result": "Llegar al examen de certificación sabiendo qué esperar, con un simulacro completo encima — transversal (los 30)"
         },
         {
           "id": "t3-04",
@@ -200,8 +228,10 @@
           "owner": "Vicky Peña",
           "minutes": 0.5,
           "priority": "MEDIA",
-          "source_note": "Clip duplicado y fuera de lugar.",
-          "production_note": "Reedición: De acuerdo. Podemos grabar con voz en off y pedir a edición apoyar con motion graphics."
+          "source_note": "Clip duplicado y fuera de lugar — Reemplazar el clip duplicado de cl.23 por un resumen real de módulos 1-3 (o eliminar la clase y renumerar): hoy 'repasa' contenido que aún no se ha visto; corregir 'introductions'",
+          "production_note": "Reedición: De acuerdo. Podemos grabar con voz en off y pedir a edición apoyar con motion graphics.",
+          "steps": "CONDICIONADA: si Construcción de Oraciones sale a B1, no hay acción. Si se conserva: reemplazar el clip de la clase 18 (duplicado exacto de la 23) por un resumen real de módulos 1-3, y corregir 'introductions'→'interjections' en ambos.",
+          "expected_result": "— (si 8024 se retira a B1 esta acción cae; mientras viva: un resumen real de módulos 1-3)"
         },
         {
           "id": "t3-05",
@@ -212,8 +242,10 @@
           "owner": "Gina Pedraza",
           "minutes": 0.5,
           "priority": "MEDIA",
-          "source_note": "Tarea sin idioma ni plantilla.",
-          "production_note": "Reedición: Se puede añadir ese recurso al final con un motion graphic que invite a ello."
+          "source_note": "Tarea sin idioma ni plantilla — Reeditar el cierre (o añadir tarjeta/recurso) para pedir la meta en inglés con plantilla A1 ('My goal is...'), convirtiendo el único CTA capturado del curso en producción PW1/IW2 real",
+          "production_note": "Reedición: Se puede añadir ese recurso al final con un motion graphic que invite a ello.",
+          "steps": "CONDICIONADA al futuro de Estrategias: si se conserva como recurso, reeditar el cierre de la clase 3 (~30s) para pedir la meta EN INGLÉS con plantilla: 'Write your goal in English: My goal is…'.",
+          "expected_result": "Escribir su meta en inglés con la plantilla 'My goal is…' — PW1/IW2"
         },
         {
           "id": "t3-06",
@@ -224,8 +256,10 @@
           "owner": "Gina Pedraza",
           "minutes": 3,
           "priority": "BAJA",
-          "source_note": "Nivel equivocado (clase en inglés B1+).",
-          "production_note": "Reedición: no entendí bien esta parte."
+          "source_note": "Nivel equivocado (clase en inglés B1+) — Si el curso se conserva como recurso fuera del camino: regrabar la clase en español o con inglés A1; sus prompts apuntan a herramientas externas.",
+          "production_note": "Reedición: no entendí bien esta parte.",
+          "steps": "CONDICIONADA: si Estrategias se conserva como recurso, regrabar la clase 8 en español o con inglés A1 (hoy está en B1+).",
+          "expected_result": null
         },
         {
           "id": "t3-07",
@@ -236,8 +270,10 @@
           "owner": "Carolina Boquín",
           "minutes": 3,
           "priority": "BAJA",
-          "source_note": "Nivel equivocado (like+ing, idioms como objetivo).",
-          "production_note": "Reedición: Me parece buena idea marcarlos como un segmento 'extra'."
+          "source_note": "Nivel equivocado (like+ing, idioms como objetivo) — Los absorbe el rediseño de Viajes en video (A146). Si Viajes sigue en audio: recortar los segmentos de idioms/like+ing o marcarlos como 'extra'.",
+          "production_note": "Reedición: Me parece buena idea marcarlos como un segmento 'extra'.",
+          "steps": "Los absorbe el rediseño de Viajes (A146). Si Viajes sigue en audio: recortar los segmentos de idioms ('kill two birds…') y like+ing de las clases 13 y 17, o rotularlos como 'extra — nivel A2'.",
+          "expected_result": null
         },
         {
           "id": "t3-08",
@@ -248,8 +284,10 @@
           "owner": "Gina Pedraza",
           "minutes": 2,
           "priority": "BAJA",
-          "source_note": "Nivel equivocado (in/on/at de tiempo como objetivo).",
-          "production_note": "Reedición: Si bien entiendo el objetivo de esta acción, no sé en la práctica cómo la plantearíamos desde reedición. Tal vez aplique como regrabación."
+          "source_note": "Nivel equivocado (in/on/at de tiempo como objetivo) — Si el curso sigue en catálogo como opcional: reencuadrar el segmento a hora simple ('at 3 o'clock' como fórmula) sin la regla in/on/at.",
+          "production_note": "Reedición: Si bien entiendo el objetivo de esta acción, no sé en la práctica cómo la plantearíamos desde reedición. Tal vez aplique como regrabación.",
+          "steps": "Si el curso sigue en catálogo: reencuadrar el segmento de la clase 12 a hora simple ('the meeting is at 3 o'clock' como fórmula), sin la regla in/on/at de tiempo.",
+          "expected_result": null
         }
       ]
     }

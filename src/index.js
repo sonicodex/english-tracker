@@ -30,6 +30,8 @@ const TASK_FIELDS = [
   'priority',
   'source_note',
   'production_note',
+  'steps',
+  'expected_result',
 ];
 
 async function readBoard(db) {
@@ -37,7 +39,7 @@ async function readBoard(db) {
     db.prepare('SELECT id, name, position FROM batches ORDER BY position, created_at').all(),
     db
       .prepare(
-        'SELECT id, batch_id, title, work_type, scope, effort, owner, minutes, priority, source_note, production_note, cancelled, position, created_at, updated_at FROM tasks ORDER BY position, created_at'
+        'SELECT id, batch_id, title, work_type, scope, effort, owner, minutes, priority, source_note, production_note, steps, expected_result, cancelled, position, created_at, updated_at FROM tasks ORDER BY position, created_at'
       )
       .all(),
     db.prepare('SELECT task_id, phase, done, done_at, done_by FROM phase_states').all(),
@@ -101,7 +103,7 @@ async function insertTask(db, body) {
   const id = newId('tsk');
   await db
     .prepare(
-      'INSERT INTO tasks (id, batch_id, title, work_type, scope, effort, owner, minutes, priority, source_note, production_note, position) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)'
+      'INSERT INTO tasks (id, batch_id, title, work_type, scope, effort, owner, minutes, priority, source_note, production_note, steps, expected_result, position) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)'
     )
     .bind(
       id,
@@ -115,6 +117,8 @@ async function insertTask(db, body) {
       str(body.priority, 16),
       str(body.source_note, 1000),
       str(body.production_note, 2000),
+      str(body.steps, 3000),
+      str(body.expected_result, 1000),
       pos?.next ?? 0
     )
     .run();
@@ -208,7 +212,7 @@ async function handleApi(request, env, url) {
       for (const f of TASK_FIELDS) {
         if (f in body) {
           sets.push(`${f} = ?`);
-          values.push(f === 'title' ? str(body[f], 240) : str(body[f], 2000));
+          values.push(f === 'title' ? str(body[f], 240) : f === 'steps' ? str(body[f], 3000) : str(body[f], 2000));
         }
       }
       if ('minutes' in body) {

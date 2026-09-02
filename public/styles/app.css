@@ -367,6 +367,8 @@ td.col-tail { text-align: right; }
 }
 .note--source { border-left-color: var(--sin-tertiary); }
 .note--production { border-left-color: var(--sin-primary); }
+.note--steps { border-left-color: var(--sin-warning); }
+.note--result { border-left-color: var(--sin-success); }
 .note__k { display: block; color: var(--sin-on-surface-variant); margin-bottom: var(--sin-space-4); }
 
 .phaselist { display: flex; flex-direction: column; gap: var(--sin-space-12); }

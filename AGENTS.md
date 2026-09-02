@@ -69,8 +69,8 @@ El seed usa ids legibles y estables (`t1`, `t1-01`) para poder re-ejecutarse con
 ```
 batches       id · name · position · created_at
 tasks         id · batch_id → batches · title · work_type · scope · effort · owner
-              minutes (REAL) · priority · source_note · production_note · position
-              created_at · updated_at
+              minutes (REAL) · priority · source_note · production_note · steps
+              expected_result · cancelled (0|1) · position · created_at · updated_at
 phase_states  (task_id, phase) PK · done (0|1) · done_at · done_by
 comments      id · task_id → tasks · phase · author · body · created_at
 ```
@@ -93,6 +93,13 @@ Notas que importan:
 - **No hay columna de etiquetas.** Existió (`tags`, con `de acuerdo`/`duda`/`propuesta`) y se
   eliminó por pedido explícito: la única etiqueta visible es `work_type`. La decisión de producción
   vive completa en `production_note`. No la reintroduzcas.
+- **`steps` y `expected_result`** son texto largo de la ficha original (`docs/tareas-detalladas.md`):
+  pasos sugeridos de producción y resultado esperado del estudiante. `steps` está en las 19 tareas;
+  `expected_result` es nullable (15 de 19 lo traen). Se ven solo en el popup de detalle, nunca en la
+  fila de la tabla — la fila ya tiene 12 columnas. `can_dos` y `applies_when` de la misma ficha
+  quedaron fuera del alcance por decisión explícita: no existen como columnas.
+- **`cancelled`** (0|1, default 0) marca una tarea como cancelada sin borrarla: tacha el título y
+  muestra una tag roja. No tiene historial ni fecha, igual que las fases.
 
 ---
 
@@ -143,7 +150,8 @@ Lo que no es `/api/*` cae al `index.html` del SPA.
 es más barato que un JOIN con agregados. Si el volumen crece mucho, ese es el lugar a revisar.
 
 Todos los strings pasan por `str(v, max)`, que hace trim, convierte `''` → `null` y trunca.
-Los máximos están en `insertTask()`; respétalos si agregas campos.
+Los máximos están en `insertTask()`; respétalos si agregas campos. `TASK_FIELDS` (habilita el
+`PATCH` parcial) incluye también `steps` (máx. 3000) y `expected_result` (máx. 1000).
 
 `/api/import` resuelve la tanda por nombre (case-insensitive, con trim) y **la crea si no existe**;
 si la fila no trae tanda, usa el `batch_id` del body. Falla por fila, no en bloque.
@@ -258,6 +266,13 @@ Estas rompieron el producto una vez. No las repitas.
 5. **Varias instancias de `wrangler dev` a la vez** siguen sirviendo la base vieja aunque borres
    `.wrangler/` (SQLite sigue con el archivo abierto). Si ves datos fantasma, mata todos los
    procesos antes de re-migrar.
+6. **`build-seed.mjs` no puede insertar en columnas que una migración posterior todavía no creó.**
+   `0002_seed.sql` corre antes que cualquier `000N_*.sql` con número mayor; si agregas una columna
+   nueva en, digamos, `0004`, el `INSERT` que genera `build-seed.mjs` **no puede mencionarla** aunque
+   `seed-data.json` ya traiga el dato (rompe con `table tasks has no column named ...` en una base
+   nueva). La columna nueva se rellena con un `UPDATE` dentro de esa misma migración `000N`, que
+   corre después y alcanza tanto a las filas que acaba de crear `0002` como a las de una base ya
+   desplegada.
 
 ---
 

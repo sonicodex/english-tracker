@@ -25,6 +25,10 @@ data.batches.forEach((batch, bi) => {
     `INSERT OR IGNORE INTO batches (id, name, position) VALUES (${q(batch.id)}, ${q(batch.name)}, ${bi});`
   );
   batch.tasks.forEach((t, ti) => {
+    // Nota: steps/expected_result NO van aquí aunque seed-data.json ya los traiga. 0002_seed.sql
+    // corre antes que la migración que agrega esas columnas (0004_task_detail.sql), así que un
+    // INSERT que las mencione rompe una base nueva. Es el UPDATE de 0004 quien las rellena,
+    // tanto en bases nuevas como en la ya desplegada — ver migrations/0004_task_detail.sql.
     out.push(
       'INSERT OR IGNORE INTO tasks (id, batch_id, title, work_type, scope, effort, owner, minutes, priority, source_note, production_note, position) VALUES (' +
         [
