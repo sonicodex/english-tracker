@@ -1,0 +1,22 @@
+{
+  "name": "english-tracker",
+  "version": "0.1.0",
+  "description": "Seguimiento de tandas y tareas de producción — Ruta Inglés A1 (Platzi)",
+  "scripts": {
+    "build:seed": "node scripts/build-seed.mjs",
+    "db:create": "wrangler d1 create english-tracker",
+    "db:migrate:local": "wrangler d1 migrations apply english-tracker --local",
+    "db:migrate": "wrangler d1 migrations apply english-tracker --remote",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "cf-typegen": "wrangler types"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "wrangler": "^4.128.0"
+  },
+  "private": true,
+  "type": "module"
+}

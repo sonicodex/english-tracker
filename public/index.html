@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="sinapsis-dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seguimiento · Ruta Inglés A1</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/assets/platzi-isotype-solid.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/material-symbols-rounded-subset.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/PlusJakartaSans-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/BricolageGrotesque-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles/fonts.css">
+<link rel="stylesheet" href="/styles/colors.css">
+<link rel="stylesheet" href="/styles/typography.css">
+<link rel="stylesheet" href="/styles/spacing.css">
+<link rel="stylesheet" href="/styles/radius.css">
+<link rel="stylesheet" href="/styles/base.css">
+<link rel="stylesheet" href="/styles/app.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar__brand">
+    <svg class="isotype" xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none" aria-hidden="true">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M12.8798 3.18514L4.23403 11.8287C2.64204 13.4203 2.64204 16.0003 4.23403 17.5911L12.8798 26.2347C14.4718 27.8263 17.0525 27.8263 18.6437 26.2347L21.5257 23.3535L18.6437 20.4723L15.7618 23.3535L7.11597 14.7099L15.7618 6.06633L21.5257 11.8287L15.7618 17.5911L18.6437 20.4723L24.4076 14.7099C25.9996 13.1183 25.9996 10.5384 24.4076 8.94753L18.6437 3.18514C17.0517 1.59356 14.4711 1.59356 12.8798 3.18514Z" fill="var(--sin-primary)"></path>
+    </svg>
+    <span class="sin-title-md">Seguimiento de producción</span>
+  </div>
+  <div class="topbar__actions">
+    <button class="topbar__who" id="who" type="button"></button>
+    <button class="btn btn--plain btn--icon" id="theme" type="button" aria-label="Cambiar tema">
+      <span class="sin-icon" aria-hidden="true">light_mode</span>
+    </button>
+  </div>
+</header>
+
+<main class="page">
+
+  <section class="page__head">
+    <div>
+      <h1 class="sin-headline-lg">Ruta Inglés A1</h1>
+      <p class="sin-body-sm page__sub" id="head-sub"></p>
+    </div>
+    <div class="page__head-actions">
+      <button class="btn btn--outlined" id="new-batch" type="button">
+        <span class="sin-icon" aria-hidden="true">library_add</span>Nueva tanda
+      </button>
+      <button class="btn btn--outlined" id="import" type="button">
+        <span class="sin-icon" aria-hidden="true">upload_file</span>Importar
+      </button>
+      <button class="btn btn--primary" id="new-task" type="button">
+        <span class="sin-icon" aria-hidden="true">add</span>Nueva tarea
+      </button>
+    </div>
+  </section>
+
+  <section class="kpis" id="kpis"></section>
+
+  <section class="toolbar">
+    <div class="search">
+      <span class="sin-icon search__ico" aria-hidden="true">search</span>
+      <input id="q" type="search" class="sin-body-sm search__input" placeholder="Filtrar por tarea, responsable o clase" aria-label="Filtrar tareas">
+      <button class="search__clear" id="q-clear" type="button" aria-label="Limpiar campo" hidden>
+        <span class="sin-icon" aria-hidden="true">close</span>
+      </button>
+    </div>
+    <div class="segmented" id="seg" role="group" aria-label="Estado"></div>
+    <div class="toolbar__spacer"></div>
+    <button class="btn btn--tertiary" id="export" type="button">
+      <span class="sin-icon" aria-hidden="true">download</span>Exportar CSV
+    </button>
+  </section>
+
+  <div id="board" class="board"></div>
+  <p class="empty sin-body-sm" id="empty" hidden>Sin resultados</p>
+
+</main>
+
+<!-- Panel de detalle -->
+<div class="scrim" id="scrim" hidden></div>
+
+<aside class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="panel-title" hidden>
+  <header class="panel__head">
+    <div class="panel__head-text">
+      <h2 class="sin-headline-sm" id="panel-title"></h2>
+      <div class="panel__meta" id="panel-meta"></div>
+    </div>
+    <button class="btn btn--plain btn--icon panel__close" data-close type="button" aria-label="Cerrar">
+      <span class="sin-icon" aria-hidden="true">close</span>
+    </button>
+  </header>
+  <div class="panel__body" id="panel-body"></div>
+</aside>
+
+<!-- Modal genérico (formularios) -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+  <div class="modal__card" id="modal-card">
+    <header class="modal__head">
+      <h2 class="sin-title-lg" id="modal-title"></h2>
+      <button class="btn btn--plain btn--icon" data-close type="button" aria-label="Cerrar">
+        <span class="sin-icon" aria-hidden="true">close</span>
+      </button>
+    </header>
+    <div class="modal__body" id="modal-body"></div>
+    <footer class="modal__foot" id="modal-foot"></footer>
+  </div>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script type="module" src="/app.js"></script>
+</body>
+</html>

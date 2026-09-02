@@ -1,0 +1,5 @@
+/* Platzi Sinapsis — minimal base. Dark-first: page surface + on-surface text, body/label face. */
+body{margin:0;background:var(--sin-surface);color:var(--sin-on-surface);font-family:var(--sin-font-body);font-size:16px;line-height:24px;letter-spacing:0.1px;-webkit-font-smoothing:antialiased}
+a{color:var(--sin-primary);text-decoration:underline}
+a:hover{color:var(--sin-on-primary-container)}
+::selection{background:color-mix(in srgb,var(--sin-primary) 30%,transparent)}

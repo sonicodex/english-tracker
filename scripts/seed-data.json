@@ -1,0 +1,257 @@
+{
+  "source": "Revisión detallada por clase — Ruta Inglés A1 · sección A · Cámara y edición (agosto 2026)",
+  "excluded": [
+    "Inglés Básico A1 para Principiantes — clase 7 (71372), clip ajeno incrustado · no aplica",
+    "Estrategias 2022 — clases 5 y 11 · no aplica (deprecado)",
+    "Fechas, Horas y Expresiones Simples — clase 20 · no aplica (2395 deprecado, reemplazado por 13082 y 12989)",
+    "Vocabulario y Expresiones — clases 2, 6, 8, 10, 18 · ficha del pie sin respuesta registrada"
+  ],
+  "batches": [
+    {
+      "id": "t1",
+      "name": "Tanda 1 — lista para agendar ya",
+      "tasks": [
+        {
+          "id": "t1-01",
+          "title": "Preposiciones (audio)",
+          "work_type": "grabación",
+          "scope": "Clases 1, 7, 8, 9 · segmentos 'have a look at the screen' (~6-8 min)",
+          "effort": "M",
+          "owner": "Ravee Lakhmani",
+          "minutes": 7,
+          "priority": "MEDIA",
+          "source_note": "Formato: audio que señala una pantalla inexistente.",
+          "production_note": "Grabación: De acuerdo, se necesita crear los guiones y pedir al profesor hacer la grabación."
+        },
+        {
+          "id": "t1-02",
+          "title": "Inglés para Viajes (audio)",
+          "work_type": "reedición",
+          "scope": "Clase 2 [01:13–01:40] y clase 10 [04:52]",
+          "effort": "S",
+          "owner": "Carolina Boquín",
+          "minutes": 1,
+          "priority": "MEDIA",
+          "source_note": "Referencias rotas (clases VR retiradas).",
+          "production_note": "Reedición: Puedo hacer los cortes de audio y pedir a edición que rehagan el rénder del apoyo visual."
+        },
+        {
+          "id": "t1-03",
+          "title": "Pronunciación",
+          "work_type": "reedición",
+          "scope": "Clase 18 · [07:37–07:53]",
+          "effort": "S",
+          "owner": "Mariana Lafon",
+          "minutes": 0.5,
+          "priority": "MEDIA",
+          "source_note": "Modelo incorrecto dictado ('catched', 'payed').",
+          "production_note": "Reedición: ¿cómo haríamos esto? Quizás podríamos ver con edición si entrenando un modelo rápido con la voz de la profe, pudiéramos corregir estas palabras mal pronunciadas, ya que probablemente contactarla para regrabar este pequeño segmento no sea tan óptimo."
+        }
+      ]
+    },
+    {
+      "id": "t2",
+      "name": "Tanda 2 — ruta obligatoria",
+      "tasks": [
+        {
+          "id": "t2-01",
+          "title": "Práctica y Checkpoint de Salida A1",
+          "work_type": "nuevo",
+          "scope": "Curso nuevo (~6-8 clases) — no existe",
+          "effort": "L",
+          "owner": "por asignar",
+          "minutes": 21,
+          "priority": "ALTA",
+          "source_note": "Modo sin práctica medible (interacción oral y teléfono).",
+          "production_note": "Nuevo: De acuerdo."
+        },
+        {
+          "id": "t2-02",
+          "title": "Escritura",
+          "work_type": "nuevo",
+          "scope": "3 clases nuevas — no existe",
+          "effort": "M",
+          "owner": "Fernanda Machado",
+          "minutes": 10.5,
+          "priority": "ALTA",
+          "source_note": "Can-dos sin fuente (escritura transaccional).",
+          "production_note": "Nuevo: No comprendo bien el objetivo aquí."
+        },
+        {
+          "id": "t2-03",
+          "title": "Vocabulario y Expresiones",
+          "work_type": "nuevo",
+          "scope": "2-3 segmentos nuevos sobre clases existentes — no existe",
+          "effort": "S",
+          "owner": "René Lora",
+          "minutes": 4.5,
+          "priority": "MEDIA",
+          "source_note": "Can-dos sin fuente (mediación es↔en).",
+          "production_note": "Nuevo: No entiendo muy bien cómo iría esto de \"Transmítelo en español\"."
+        },
+        {
+          "id": "t2-04",
+          "title": "Vocabulario y Expresiones",
+          "work_type": "reedición",
+          "scope": "Clase 14 (segmento present continuous) y clase 17 (segmento past simple)",
+          "effort": "M",
+          "owner": "René Lora",
+          "minutes": 15,
+          "priority": "MEDIA",
+          "source_note": "Nivel equivocado (A2 como objetivo).",
+          "production_note": "Reedición: Concuerdo en que el presente contínuo debería reubicarse, ¿regrabaríamos las partes que están en este tiempo por expresiones en presente simple?"
+        },
+        {
+          "id": "t2-05",
+          "title": "Escritura",
+          "work_type": "grabación",
+          "scope": "Clases 17 (rutinas con adverbios) y 18 (biografía en pasado) + nivel de tareas del curso",
+          "effort": "M",
+          "owner": "Fernanda Machado",
+          "minutes": 8,
+          "priority": "MEDIA",
+          "source_note": "Nivel equivocado (tareas A2 como objetivo).",
+          "production_note": "Grabación: De acuerdo, se necesita crear los guiones y pedir al profesor hacer la grabación."
+        },
+        {
+          "id": "t2-06",
+          "title": "Verbo To Be",
+          "work_type": "reedición",
+          "scope": "Clase 10 · cierre (~últimos 20s)",
+          "effort": "S",
+          "owner": "Jhon Carvajal",
+          "minutes": 0.3,
+          "priority": "BAJA",
+          "source_note": "Tarea desalineada con lo enseñado.",
+          "production_note": "Reedición: De acuerdo. Podemos grabar con voz en off y pedir a edición apoyar con motion graphics."
+        },
+        {
+          "id": "t2-07",
+          "title": "Escritura",
+          "work_type": "reedición",
+          "scope": "Clase 2 · segmento acrónimos (~2.5 min)",
+          "effort": "S",
+          "owner": "Fernanda Machado",
+          "minutes": 2.5,
+          "priority": "BAJA",
+          "source_note": "Metalenguaje fuera de nivel.",
+          "production_note": "Reedición: Puedo hacer estos cortes y resubir la clase."
+        },
+        {
+          "id": "t2-08",
+          "title": "Inglés para el Trabajo",
+          "work_type": "reedición",
+          "scope": "Clase 13 · cierre",
+          "effort": "S",
+          "owner": "Gina Pedraza",
+          "minutes": 2,
+          "priority": "BAJA",
+          "source_note": "Material de examen invisible para el estudiante.",
+          "production_note": "Reedición: De acuerdo. Podemos grabar con voz en off y pedir a edición apoyar con motion graphics."
+        }
+      ]
+    },
+    {
+      "id": "t3",
+      "name": "Tanda 3 — condicionadas y opcionales",
+      "tasks": [
+        {
+          "id": "t3-01",
+          "title": "Viajes en video",
+          "work_type": "nuevo",
+          "scope": "Curso nuevo opcional (~10-12 clases) — reemplaza al audio 2175",
+          "effort": "L",
+          "owner": "por asignar",
+          "minutes": 38.5,
+          "priority": "MEDIA",
+          "source_note": "Refuerzo opcional (audiencia de viajes).",
+          "production_note": "Nuevo: De acuerdo."
+        },
+        {
+          "id": "t3-02",
+          "title": "Inglés para tu Trabajo",
+          "work_type": "nuevo",
+          "scope": "Curso nuevo opcional (~8-10 clases) — evolución de 3996",
+          "effort": "L",
+          "owner": "por asignar (base: Gina Pedraza)",
+          "minutes": 31.5,
+          "priority": "MEDIA",
+          "source_note": "Refuerzo opcional (audiencia laboral).",
+          "production_note": "Nuevo: De acuerdo."
+        },
+        {
+          "id": "t3-03",
+          "title": "Preparación Certificación A1",
+          "work_type": "nuevo",
+          "scope": "Curso corto nuevo opcional (~4-6 clases) — no existe",
+          "effort": "M",
+          "owner": "por asignar",
+          "minutes": 15,
+          "priority": "BAJA",
+          "source_note": "Preparación de examen (audiencia B2B).",
+          "production_note": "Nuevo: De acuerdo y lo pondría prioritario."
+        },
+        {
+          "id": "t3-04",
+          "title": "Construcción de Oraciones",
+          "work_type": "reedición",
+          "scope": "Clase 18 (63860) · clip completo",
+          "effort": "S",
+          "owner": "Vicky Peña",
+          "minutes": 0.5,
+          "priority": "MEDIA",
+          "source_note": "Clip duplicado y fuera de lugar.",
+          "production_note": "Reedición: De acuerdo. Podemos grabar con voz en off y pedir a edición apoyar con motion graphics."
+        },
+        {
+          "id": "t3-05",
+          "title": "Estrategias para Aprender Inglés",
+          "work_type": "reedición",
+          "scope": "Clase 3 (84347) · cierre (~últimos 30s)",
+          "effort": "S",
+          "owner": "Gina Pedraza",
+          "minutes": 0.5,
+          "priority": "MEDIA",
+          "source_note": "Tarea sin idioma ni plantilla.",
+          "production_note": "Reedición: Se puede añadir ese recurso al final con un motion graphic que invite a ello."
+        },
+        {
+          "id": "t3-06",
+          "title": "Estrategias para Aprender Inglés",
+          "work_type": "reedición",
+          "scope": "Clase 8 (IA sin pena)",
+          "effort": "S",
+          "owner": "Gina Pedraza",
+          "minutes": 3,
+          "priority": "BAJA",
+          "source_note": "Nivel equivocado (clase en inglés B1+).",
+          "production_note": "Reedición: no entendí bien esta parte."
+        },
+        {
+          "id": "t3-07",
+          "title": "Inglés para Viajes (audio)",
+          "work_type": "reedición",
+          "scope": "Clases 13 y 17 (segmentos parciales)",
+          "effort": "S",
+          "owner": "Carolina Boquín",
+          "minutes": 3,
+          "priority": "BAJA",
+          "source_note": "Nivel equivocado (like+ing, idioms como objetivo).",
+          "production_note": "Reedición: Me parece buena idea marcarlos como un segmento 'extra'."
+        },
+        {
+          "id": "t3-08",
+          "title": "Inglés para el Trabajo",
+          "work_type": "reedición",
+          "scope": "Clase 12 (agendar reuniones)",
+          "effort": "S",
+          "owner": "Gina Pedraza",
+          "minutes": 2,
+          "priority": "BAJA",
+          "source_note": "Nivel equivocado (in/on/at de tiempo como objetivo).",
+          "production_note": "Reedición: Si bien entiendo el objetivo de esta acción, no sé en la práctica cómo la plantearíamos desde reedición. Tal vez aplique como regrabación."
+        }
+      ]
+    }
+  ]
+}

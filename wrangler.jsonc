@@ -1,0 +1,28 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "english-tracker",
+	"main": "src/index.js",
+	"compatibility_date": "2026-08-01",
+	"assets": {
+		"directory": "./public",
+		"binding": "ASSETS"
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "english-tracker",
+			// Reemplaza con el id que devuelve: npx wrangler d1 create english-tracker
+			"database_id": "ffe56069-9dc1-4f7a-bba2-1a40397c4b06",
+			"migrations_dir": "migrations"
+		},
+		{
+			"binding": "english_tracker",
+			"database_name": "english-tracker",
+			"database_id": "ffe56069-9dc1-4f7a-bba2-1a40397c4b06",
+			"remote": true
+		}
+	],
+	"observability": {
+		"enabled": true
+	}
+}
