@@ -75,6 +75,7 @@ const tag = (text, color = 'neutral', { outlined = false, icon } = {}) =>
 const doneCount = (task) => state.board.phases.filter((p) => task.phases[p.id]?.done).length;
 const isComplete = (task) => !!task.phases.done?.done;
 const isStarted = (task) => doneCount(task) > 0;
+const isCancelled = (task) => !!task.cancelled;
 
 function taskMatches(task) {
   if (state.filter === 'done' && !isComplete(task)) return false;
@@ -142,12 +143,14 @@ function phaseCell(task, phase) {
 
 function taskRow(task) {
   const icon = WORK_ICON[(task.work_type || '').toLowerCase()] || 'label';
-  return `<tr data-row="${esc(task.id)}"${isComplete(task) ? ' class="task--complete"' : ''}>
+  const rowClass = [isComplete(task) && 'task--complete', isCancelled(task) && 'task--cancelled'].filter(Boolean).join(' ');
+  return `<tr data-row="${esc(task.id)}"${rowClass ? ` class="${rowClass}"` : ''}>
     <td class="col-task">
       <div class="task__title">
+        ${isCancelled(task) ? tag('Cancelada', 'error') : ''}
+        ${task.work_type ? tag(task.work_type, 'neutral') : ''}
         <span class="sin-icon" aria-hidden="true" style="color:var(--sin-on-surface-variant);font-size:20px">${icon}</span>
         <span class="task__name sin-title-sm">${esc(task.title)}</span>
-        ${task.work_type ? tag(task.work_type, 'neutral') : ''}
       </div>
       ${task.scope ? `<span class="task__scope sin-label-xs">${esc(task.scope)}</span>` : ''}
     </td>
@@ -317,7 +320,9 @@ async function openDetail(taskId, { keepScroll = false } = {}) {
   panelTaskId = taskId;
 
   $('#panel-title').textContent = detail.title;
+  $('#panel-title').classList.toggle('is-cancelled', !!detail.cancelled);
   $('#panel-meta').innerHTML = [
+    detail.cancelled ? tag('Cancelada', 'error') : '',
     detail.work_type ? tag(detail.work_type, 'neutral', { icon: WORK_ICON[(detail.work_type || '').toLowerCase()] || 'label' }) : '',
     detail.priority ? tag(detail.priority, PRIORITY_TAG[detail.priority] || 'neutral') : '',
     detail.effort ? tag(`Esfuerzo ${detail.effort}`, EFFORT_TAG[detail.effort] || 'neutral') : '',
@@ -400,9 +405,14 @@ async function openDetail(taskId, { keepScroll = false } = {}) {
       <button class="btn btn--outlined btn--sm" type="button" data-task-edit="${esc(taskId)}">
         <span class="sin-icon" aria-hidden="true">edit</span>Editar tarea
       </button>
-      <button class="btn btn--destroy btn--sm" type="button" data-task-del="${esc(taskId)}">
-        <span class="sin-icon" aria-hidden="true">delete</span>Eliminar tarea
-      </button>
+      <div style="display:flex;gap:var(--sin-space-8)">
+        <button class="btn btn--outlined btn--sm" type="button" data-task-cancel="${esc(taskId)}" data-cancelled="${detail.cancelled ? '1' : '0'}">
+          <span class="sin-icon" aria-hidden="true">${detail.cancelled ? 'undo' : 'block'}</span>${detail.cancelled ? 'Reactivar tarea' : 'Cancelar tarea'}
+        </button>
+        <button class="btn btn--destroy btn--sm" type="button" data-task-del="${esc(taskId)}">
+          <span class="sin-icon" aria-hidden="true">delete</span>Eliminar tarea
+        </button>
+      </div>
     </div>`;
 
   $('#panel').hidden = false;
@@ -862,6 +872,21 @@ document.addEventListener('click', async (e) => {
   const editTask = t.closest('[data-task-edit]');
   if (editTask) return editTaskModal(editTask.dataset.taskEdit);
 
+  const cancelTask = t.closest('[data-task-cancel]');
+  if (cancelTask) {
+    const id = cancelTask.dataset.taskCancel;
+    const next = cancelTask.dataset.cancelled !== '1';
+    try {
+      await api(`/tasks/${encodeURIComponent(id)}`, { method: 'PATCH', body: { cancelled: next } });
+      await load();
+      if (panelTaskId === id) await openDetail(id, { keepScroll: true });
+      toast(next ? 'Tarea cancelada' : 'Tarea reactivada');
+    } catch (err) {
+      toast(err.message, 'error');
+    }
+    return;
+  }
+
   const delTask = t.closest('[data-task-del]');
   if (delTask) {
     const id = delTask.dataset.taskDel;
@@ -905,8 +930,8 @@ document.addEventListener('click', async (e) => {
     return renderBoard();
   }
 
+  if (t.closest('[data-panel-close]') || t === $('#scrim')) return closePanel();
   if (t.closest('[data-close]') || t === $('#modal')) return closeModal();
-  if (t === $('#scrim')) return closePanel();
 });
 
 $('#new-task').onclick = () => newTaskModal();

@@ -249,6 +249,7 @@ td.col-tail { text-align: right; }
 .task__mono { font-family: var(--sin-font-mono); font-size: 14px; line-height: 20px; color: var(--sin-on-surface-variant); }
 .task__tail { display: inline-flex; align-items: center; gap: var(--sin-space-4); justify-content: flex-end; }
 .task--complete .task__name { color: var(--sin-on-surface-variant); }
+.task--cancelled .task__name { text-decoration: line-through; color: var(--sin-on-surface-variant); }
 
 /* ---------- Checkbox ---------- */
 
@@ -352,6 +353,7 @@ td.col-tail { text-align: right; }
 }
 .panel__head-text { flex: 1 1 auto; min-width: 0; }
 .panel__head h2 { margin: 0; }
+.panel__head h2.is-cancelled { text-decoration: line-through; color: var(--sin-on-surface-variant); }
 .panel__meta { display: flex; flex-wrap: wrap; gap: var(--sin-space-8); margin-top: var(--sin-space-12); align-items: center; }
 .panel__close { flex: none; width: 36px; height: 36px; border-radius: var(--sin-radius-full); background: var(--sin-surface-container-high); }
 .panel__body { flex: 1 1 auto; overflow-y: auto; padding: var(--sin-space-24); display: flex; flex-direction: column; gap: var(--sin-space-16); }

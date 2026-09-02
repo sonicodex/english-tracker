@@ -37,7 +37,7 @@ async function readBoard(db) {
     db.prepare('SELECT id, name, position FROM batches ORDER BY position, created_at').all(),
     db
       .prepare(
-        'SELECT id, batch_id, title, work_type, scope, effort, owner, minutes, priority, source_note, production_note, position, created_at, updated_at FROM tasks ORDER BY position, created_at'
+        'SELECT id, batch_id, title, work_type, scope, effort, owner, minutes, priority, source_note, production_note, cancelled, position, created_at, updated_at FROM tasks ORDER BY position, created_at'
       )
       .all(),
     db.prepare('SELECT task_id, phase, done, done_at, done_by FROM phase_states').all(),
@@ -51,6 +51,7 @@ async function readBoard(db) {
     const task = {
       ...row,
       minutes: row.minutes === null ? null : Number(row.minutes),
+      cancelled: !!row.cancelled,
       phases,
       comment_counts: Object.fromEntries(PHASE_IDS.map((p) => [p, 0])),
       comments_total: 0,
@@ -196,6 +197,7 @@ async function handleApi(request, env, url) {
       return json({
         ...task,
         minutes: task.minutes === null ? null : Number(task.minutes),
+        cancelled: !!task.cancelled,
         phases,
         comments: comments.results,
       });
@@ -216,6 +218,10 @@ async function handleApi(request, env, url) {
       if ('batch_id' in body) {
         sets.push('batch_id = ?');
         values.push(str(body.batch_id, 64));
+      }
+      if ('cancelled' in body) {
+        sets.push('cancelled = ?');
+        values.push(body.cancelled ? 1 : 0);
       }
       if (!sets.length) return bad('Nada que actualizar');
       sets.push('updated_at = ?');
