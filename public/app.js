@@ -17,6 +17,7 @@ const state = {
 };
 
 const WORK_ICON = { grabación: 'videocam', grabacion: 'videocam', reedición: 'movie_edit', reedicion: 'movie_edit', nuevo: 'add_circle' };
+const WORK_TYPE_TAG = { grabación: 'info', grabacion: 'info', reedición: 'primary', reedicion: 'primary', nuevo: 'success' };
 const PRIORITY_TAG = { ALTA: 'error', MEDIA: 'warning', BAJA: 'neutral' };
 const EFFORT_TAG = { S: 'neutral', M: 'warning', L: 'error' };
 
@@ -148,7 +149,7 @@ function taskRow(task) {
     <td class="col-task">
       <div class="task__title">
         ${isCancelled(task) ? tag('Cancelada', 'error') : ''}
-        ${task.work_type ? tag(task.work_type, 'neutral') : ''}
+        ${task.work_type ? tag(task.work_type, WORK_TYPE_TAG[(task.work_type || '').toLowerCase()] || 'neutral') : ''}
         <span class="sin-icon" aria-hidden="true" style="color:var(--sin-on-surface-variant);font-size:20px">${icon}</span>
         <span class="task__name sin-title-sm">${esc(task.title)}</span>
       </div>
@@ -214,7 +215,7 @@ function renderBoard() {
           <thead>
             <tr>
               <th class="col-task">Tarea</th>
-              <th class="col-meta col-owner">Responsable</th>
+              <th class="col-meta col-owner">Profe</th>
               <th class="col-meta">Esfuerzo</th>
               <th class="col-meta">Prioridad</th>
               <th class="col-num">Duración</th>
@@ -323,7 +324,7 @@ async function openDetail(taskId, { keepScroll = false } = {}) {
   $('#panel-title').classList.toggle('is-cancelled', !!detail.cancelled);
   $('#panel-meta').innerHTML = [
     detail.cancelled ? tag('Cancelada', 'error') : '',
-    detail.work_type ? tag(detail.work_type, 'neutral', { icon: WORK_ICON[(detail.work_type || '').toLowerCase()] || 'label' }) : '',
+    detail.work_type ? tag(detail.work_type, WORK_TYPE_TAG[(detail.work_type || '').toLowerCase()] || 'neutral', { icon: WORK_ICON[(detail.work_type || '').toLowerCase()] || 'label' }) : '',
     detail.priority ? tag(detail.priority, PRIORITY_TAG[detail.priority] || 'neutral') : '',
     detail.effort ? tag(`Esfuerzo ${detail.effort}`, EFFORT_TAG[detail.effort] || 'neutral') : '',
     detail.owner ? tag(detail.owner, 'neutral', { outlined: true, icon: 'person' }) : '',
@@ -464,7 +465,7 @@ function taskForm(task = {}, defaultBatch = null) {
       ],
     })}
     ${field('scope', 'Clases / segmentos', { value: task.scope || '', span: true })}
-    ${field('owner', 'Responsable', { value: task.owner || '' })}
+    ${field('owner', 'Profe', { value: task.owner || '' })}
     ${field('effort', 'Esfuerzo', {
       value: task.effort || '',
       options: [
@@ -608,14 +609,14 @@ const COLUMN_ALIASES = {
   tipo: 'work_type', 'tipo de trabajo': 'work_type', work_type: 'work_type', formato: 'work_type',
   alcance: 'scope', clases: 'scope', clase: 'scope', scope: 'scope', segmento: 'scope', segmentos: 'scope',
   esfuerzo: 'effort', effort: 'effort',
-  responsable: 'owner', owner: 'owner', profesor: 'owner', profesora: 'owner', 'dueño': 'owner',
+  profe: 'owner', responsable: 'owner', owner: 'owner', profesor: 'owner', profesora: 'owner', 'dueño': 'owner',
   minutos: 'minutes', min: 'minutes', minutes: 'minutes', 'duración': 'minutes', duracion: 'minutes',
   prioridad: 'priority', priority: 'priority',
   ficha: 'source_note', source_note: 'source_note', nota: 'source_note', hallazgo: 'source_note',
   respuesta: 'production_note', production_note: 'production_note', comentario: 'production_note', 'decisión': 'production_note', decision: 'production_note',
 };
 
-const EXPORT_COLUMNS = ['tanda', 'tarea', 'tipo', 'clases', 'esfuerzo', 'responsable', 'minutos', 'prioridad', 'ficha', 'respuesta'];
+const EXPORT_COLUMNS = ['tanda', 'tarea', 'tipo', 'clases', 'esfuerzo', 'profe', 'minutos', 'prioridad', 'ficha', 'respuesta'];
 
 function detectDelimiter(text) {
   const line = text.split(/\r?\n/).find((l) => l.trim()) || '';
@@ -692,7 +693,7 @@ function importModal() {
           <input type="file" id="imp-file" accept=".csv,.tsv,.txt,text/csv" hidden>
         </label>
       </div>
-      <textarea id="imp-text" spellcheck="false" aria-label="Pega aquí tu CSV o tabla" placeholder="tanda,tarea,tipo,clases,esfuerzo,responsable,minutos,prioridad&#10;Tanda 4,Listening A1,grabación,Clases 1-4,M,Por asignar,12,ALTA"></textarea>
+      <textarea id="imp-text" spellcheck="false" aria-label="Pega aquí tu CSV o tabla" placeholder="tanda,tarea,tipo,clases,esfuerzo,profe,minutos,prioridad&#10;Tanda 4,Listening A1,grabación,Clases 1-4,M,Por asignar,12,ALTA"></textarea>
       <div class="importer__cols">${columns.map((c) => tag(c, 'neutral', { outlined: true })).join('')}</div>
       <div id="imp-preview"></div>
     </div>`,
