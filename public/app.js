@@ -156,7 +156,7 @@ function taskRow(task) {
       ${task.scope ? `<span class="task__scope sin-label-xs">${esc(task.scope)}</span>` : ''}
     </td>
     <td class="col-meta col-owner"><span class="task__owner sin-body-sm">${esc(task.owner || '—')}</span></td>
-    <td class="col-meta">${task.effort ? tag(`Esfuerzo ${task.effort}`, EFFORT_TAG[task.effort] || 'neutral') : '—'}</td>
+    <td class="col-meta">${task.effort ? tag(task.effort, EFFORT_TAG[task.effort] || 'neutral') : '—'}</td>
     <td class="col-meta">${task.priority ? tag(task.priority, PRIORITY_TAG[task.priority] || 'neutral') : '—'}</td>
     <td class="col-num"><span class="task__mono">${esc(fmtMin(task.minutes))}</span></td>
     ${state.board.phases.map((p) => phaseCell(task, p)).join('')}
@@ -326,7 +326,7 @@ async function openDetail(taskId, { keepScroll = false } = {}) {
     detail.cancelled ? tag('Cancelada', 'error') : '',
     detail.work_type ? tag(detail.work_type, WORK_TYPE_TAG[(detail.work_type || '').toLowerCase()] || 'neutral', { icon: WORK_ICON[(detail.work_type || '').toLowerCase()] || 'label' }) : '',
     detail.priority ? tag(detail.priority, PRIORITY_TAG[detail.priority] || 'neutral') : '',
-    detail.effort ? tag(`Esfuerzo ${detail.effort}`, EFFORT_TAG[detail.effort] || 'neutral') : '',
+    detail.effort ? tag(detail.effort, EFFORT_TAG[detail.effort] || 'neutral') : '',
     detail.owner ? tag(detail.owner, 'neutral', { outlined: true, icon: 'person' }) : '',
     detail.minutes === null ? '' : tag(fmtMin(detail.minutes), 'neutral', { outlined: true, icon: 'timer' }),
     `<span class="sin-label-xs" style="color:var(--sin-on-surface-variant)">${esc(detail.scope || '')}</span>`,
