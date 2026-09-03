@@ -93,6 +93,9 @@ function taskMatches(task) {
 
 const allTasks = () => state.board.batches.flatMap((b) => b.tasks);
 
+// Mismo orden y filtro que el tablero visible, para poder navegar prev/next desde el detalle.
+const visibleTasks = () => state.board.batches.flatMap((b) => b.tasks.filter(taskMatches));
+
 /* ---------- Render: KPIs ---------- */
 
 function renderKpis() {
@@ -418,9 +421,22 @@ async function openDetail(taskId, { keepScroll = false } = {}) {
       </div>
     </div>`;
 
+  const list = visibleTasks();
+  const idx = list.findIndex((t) => t.id === taskId);
+  $('#panel-prev').disabled = idx <= 0;
+  $('#panel-next').disabled = idx === -1 || idx >= list.length - 1;
+
   $('#panel').hidden = false;
   $('#scrim').hidden = false;
   body.scrollTop = scrollTop;
+}
+
+function openAdjacentDetail(step) {
+  const list = visibleTasks();
+  const idx = list.findIndex((t) => t.id === panelTaskId);
+  if (idx === -1) return;
+  const next = list[idx + step];
+  if (next) openDetail(next.id);
 }
 
 /* ---------- Modal ---------- */
@@ -939,6 +955,12 @@ document.addEventListener('click', async (e) => {
     return renderBoard();
   }
 
+  const prevBtn = t.closest('[data-panel-prev]');
+  if (prevBtn) return openAdjacentDetail(-1);
+
+  const nextBtn = t.closest('[data-panel-next]');
+  if (nextBtn) return openAdjacentDetail(1);
+
   if (t.closest('[data-panel-close]') || t === $('#scrim')) return closePanel();
   if (t.closest('[data-close]') || t === $('#modal')) return closeModal();
 });
@@ -972,6 +994,10 @@ document.addEventListener('keydown', (e) => {
   if (e.key === '/' && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) {
     e.preventDefault();
     $('#q').focus();
+  }
+  if (!$('#panel').hidden && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) {
+    if (e.key === 'ArrowLeft') return openAdjacentDetail(-1);
+    if (e.key === 'ArrowRight') return openAdjacentDetail(1);
   }
 });
 
