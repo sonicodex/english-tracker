@@ -3,8 +3,7 @@
 -- Excluidas del seguimiento:
 --   · Inglés Básico A1 para Principiantes — clase 7 (71372), clip ajeno incrustado · no aplica
 --   · Estrategias 2022 — clases 5 y 11 · no aplica (deprecado)
---   · Fechas, Horas y Expresiones Simples — clase 20 · no aplica (2395 deprecado, reemplazado por 13082 y 12989)
---   · Vocabulario y Expresiones — clases 2, 6, 8, 10, 18 · ficha del pie sin respuesta registrada
+--   · Fechas, Horas y Expresiones Simples — clase 20 · no aplica (2395 deprecado, reemplazado por 13082 y 12989 — confirmado por JuanPa)
 
 INSERT OR IGNORE INTO batches (id, name, position) VALUES ('t1', 'Tanda 1 — lista para agendar ya', 0);
 INSERT OR IGNORE INTO tasks (id, batch_id, title, work_type, scope, effort, owner, minutes, priority, source_note, production_note, position) VALUES ('t1-01', 't1', 'Preposiciones (audio)', 'grabación', 'Clases 1, 7, 8, 9 · segmentos ''have a look at the screen'' (~6-8 min)', 'M', 'Ravee Lakhmani', 7, 'MEDIA', 'Formato: audio que señala una pantalla inexistente — Reeditar los segmentos ''have a look at the screen'' con descripciones verbales autosuficientes de las posiciones (o insertar audio-descripción), para que el andamiaje de lugar funcione en modo podcast', 'Grabación: De acuerdo, se necesita crear los guiones y pedir al profesor hacer la grabación.', 0);
@@ -86,6 +85,13 @@ INSERT OR IGNORE INTO phase_states (task_id, phase, done) VALUES ('t2-08', 'exec
 INSERT OR IGNORE INTO phase_states (task_id, phase, done) VALUES ('t2-08', 'edition', 0);
 INSERT OR IGNORE INTO phase_states (task_id, phase, done) VALUES ('t2-08', 'review', 0);
 INSERT OR IGNORE INTO phase_states (task_id, phase, done) VALUES ('t2-08', 'done', 0);
+INSERT OR IGNORE INTO tasks (id, batch_id, title, work_type, scope, effort, owner, minutes, priority, source_note, production_note, position) VALUES ('t2-09', 't2', 'Vocabulario y Expresiones', 'reedición', 'Clases 2, 6, 8, 10, 18 · líneas y CTAs sueltos', 'S', 'René Lora', 4, 'MEDIA', 'Nivel equivocado (A2 en CTAs y diálogos) — Micro-reediciones: quitar o sustituir las líneas A2 incidentales (''I''ve made up my mind'', comparativos en diálogo) y los CTAs que exigen past simple', NULL, 8);
+INSERT OR IGNORE INTO phase_states (task_id, phase, done) VALUES ('t2-09', 'backlog', 0);
+INSERT OR IGNORE INTO phase_states (task_id, phase, done) VALUES ('t2-09', 'planning', 0);
+INSERT OR IGNORE INTO phase_states (task_id, phase, done) VALUES ('t2-09', 'execution', 0);
+INSERT OR IGNORE INTO phase_states (task_id, phase, done) VALUES ('t2-09', 'edition', 0);
+INSERT OR IGNORE INTO phase_states (task_id, phase, done) VALUES ('t2-09', 'review', 0);
+INSERT OR IGNORE INTO phase_states (task_id, phase, done) VALUES ('t2-09', 'done', 0);
 
 INSERT OR IGNORE INTO batches (id, name, position) VALUES ('t3', 'Tanda 3 — condicionadas y opcionales', 2);
 INSERT OR IGNORE INTO tasks (id, batch_id, title, work_type, scope, effort, owner, minutes, priority, source_note, production_note, position) VALUES ('t3-01', 't3', 'Viajes en video', 'nuevo', 'Curso nuevo opcional (~10-12 clases) — reemplaza al audio 2175', 'L', 'por asignar', 38.5, 'MEDIA', 'Refuerzo opcional (audiencia de viajes) — En video (no audio), simuladores re-escritos a A1; desvío clásico de viajes', 'Nuevo: De acuerdo.', 0);

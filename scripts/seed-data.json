@@ -3,8 +3,7 @@
   "excluded": [
     "Inglés Básico A1 para Principiantes — clase 7 (71372), clip ajeno incrustado · no aplica",
     "Estrategias 2022 — clases 5 y 11 · no aplica (deprecado)",
-    "Fechas, Horas y Expresiones Simples — clase 20 · no aplica (2395 deprecado, reemplazado por 13082 y 12989)",
-    "Vocabulario y Expresiones — clases 2, 6, 8, 10, 18 · ficha del pie sin respuesta registrada"
+    "Fechas, Horas y Expresiones Simples — clase 20 · no aplica (2395 deprecado, reemplazado por 13082 y 12989 — confirmado por JuanPa)"
   ],
   "batches": [
     {
@@ -170,6 +169,20 @@
           "production_note": "Reedición: De acuerdo. Podemos grabar con voz en off y pedir a edición apoyar con motion graphics.",
           "steps": "Añadir al cierre de la clase 13 una pantalla (~2 min de motion/gráfico) con los DOS perfiles de candidatos que hoy solo existen en el worksheet, para que los ítems del examen tengan referente visible. Texto de los perfiles: en el worksheet de la clase.",
           "expected_result": "Leer los dos perfiles en pantalla y decidir con esa información — R5"
+        },
+        {
+          "id": "t2-09",
+          "title": "Vocabulario y Expresiones",
+          "work_type": "reedición",
+          "scope": "Clases 2, 6, 8, 10, 18 · líneas y CTAs sueltos",
+          "effort": "S",
+          "owner": "René Lora",
+          "minutes": 4,
+          "priority": "MEDIA",
+          "source_note": "Nivel equivocado (A2 en CTAs y diálogos) — Micro-reediciones: quitar o sustituir las líneas A2 incidentales ('I've made up my mind', comparativos en diálogo) y los CTAs que exigen past simple",
+          "production_note": null,
+          "steps": "Micro-cortes de edición: clase 2 ('I've made up my mind'), clases 6 y 10 (comparativos en diálogo — dejar como input, quitar del CTA), clases 8 y 18 (CTAs que exigen past simple → regrabar solo la frase del CTA pidiendo la tarea en presente).",
+          "expected_result": null
         }
       ]
     },
